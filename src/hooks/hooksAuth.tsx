@@ -2,7 +2,6 @@ import React, { createContext, useCallback, useContext, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { IProps } from "../types";
-import Dashboard from "../pages/PageDashboard";
 
 interface HooksAuthData {}
 

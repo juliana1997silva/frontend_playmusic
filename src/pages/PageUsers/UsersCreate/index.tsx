@@ -3,10 +3,11 @@ import { Button, FloatingLabel, Form, Image } from "react-bootstrap";
 import { Container, ContainerGlobal, Header } from "./styles";
 import { Breadcrumb } from "rsuite";
 import { useNavigate } from "react-router-dom";
-import fotoUsers from "../../../assets/users-create.jpg";
+import { useUsers } from "../hooks/hooksUsers";
 
 const UsersCreate: React.FC = () => {
   const navegate = useNavigate();
+  const { ju } = useUsers();
   const [name, setName] = useState("");
   const [filial, setFilial] = useState("");
   const [email, setEmail] = useState("");
@@ -17,7 +18,8 @@ const UsersCreate: React.FC = () => {
     console.log("filial =>", filial);
     console.log("email =>", email);
     console.log("ocupacao =>", ocupacao);
-  }, [name, filial, email, ocupacao]);
+    console.log("ju =>", ju);
+  }, [name, filial, email, ocupacao, ju]);
 
   return (
     <ContainerGlobal>
@@ -90,7 +92,7 @@ const UsersCreate: React.FC = () => {
             width: "48%",
           }}
         >
-          <Image alt="Foto Destaque Users" src={fotoUsers} />
+          <span>INFORMAÇÕES DA FILIAL QUE FOI ESCOLHIDA</span>
         </div>
       </Container>
     </ContainerGlobal>

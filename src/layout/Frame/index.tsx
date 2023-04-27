@@ -6,6 +6,8 @@ import TaskIcon from "@rsuite/icons/Task";
 import CheckOutlineIcon from "@rsuite/icons/CheckOutline";
 import DocPassIcon from "@rsuite/icons/DocPass";
 import UserInfoIcon from "@rsuite/icons/UserInfo";
+import { useAuth } from "../../hooks/hooksAuth";
+import { useUsers } from "../../pages/PageUsers/hooks/hooksUsers";
 
 const Frame: React.FC = () => {
   const [expanded, setExpanded] = useState(false);
@@ -39,7 +41,9 @@ const Frame: React.FC = () => {
                   >
                     Criar Usuarios
                   </Nav.Item>
-                  <Nav.Item eventKey="2-2">Listar Usuarios</Nav.Item>
+                  <Nav.Item eventKey="2-2" onSelect={() => navegate("/users")}>
+                    Listar Usuarios
+                  </Nav.Item>
                 </Nav.Menu>
               </Nav>
             </Sidenav.Body>

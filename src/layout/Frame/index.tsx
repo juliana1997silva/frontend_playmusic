@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Sidebar, Sidenav, Nav } from "rsuite";
 import DashboardIcon from "@rsuite/icons/Dashboard";
-import TaskIcon from "@rsuite/icons/Task";
-import CheckOutlineIcon from "@rsuite/icons/CheckOutline";
-import DocPassIcon from "@rsuite/icons/DocPass";
 import UserInfoIcon from "@rsuite/icons/UserInfo";
-import { useAuth } from "../../hooks/hooksAuth";
-import { useUsers } from "../../pages/PageUsers/hooks/hooksUsers";
 
 const Frame: React.FC = () => {
   const [expanded, setExpanded] = useState(false);

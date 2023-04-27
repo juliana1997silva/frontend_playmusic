@@ -1,5 +1,5 @@
-import React, { useCallback, useState, useEffect } from "react";
-import { Button, FloatingLabel, Form, Image } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Button, FloatingLabel, Form } from "react-bootstrap";
 import { Container, ContainerGlobal, Header } from "./styles";
 import { Breadcrumb } from "rsuite";
 import { useNavigate } from "react-router-dom";

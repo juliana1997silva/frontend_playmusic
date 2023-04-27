@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Container, Content, Footer, Header, Sidebar } from "rsuite";
+import { Container, Content, Footer, Header } from "rsuite";
 import ComponentHeader from "../Header";
 import Frame from "../Frame";
 

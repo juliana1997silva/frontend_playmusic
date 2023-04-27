@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import {
   MDBBtn,
   MDBContainer,
@@ -10,12 +10,9 @@ import {
   MDBInput,
   MDBCheckbox,
 } from "mdb-react-ui-kit";
-import { useAuth } from "../../../hooks/hooksAuth";
-import Dashboard from "../../PageDashboard";
 import { Navigate } from "react-router";
 
 const Login: React.FC = () => {
-  const {} = useAuth();
   const [showDashboard, setShowDashboard] = useState(false);
 
   if (showDashboard) {

@@ -6,8 +6,9 @@ import Master from "../layout/Master";
 
 const PageLogin = React.lazy(() => import("../pages/PageLogin"));
 const PageDashboard = React.lazy(() => import("../pages/PageDashboard"));
-const PageUsers = React.lazy(() => import("../pages/PageUsers"));
-const UsersList = React.lazy(() => import("../pages/PageUsers/UsersList"));
+const PageBranch = React.lazy(() => import("../pages/PageBranch"));
+//const PageUsers = React.lazy(() => import("../pages/PageUsers"));
+//const UsersList = React.lazy(() => import("../pages/PageUsers/UsersList"));
 
 export function Router() {
   return (
@@ -32,6 +33,16 @@ export function Router() {
           }
         />
         <Route
+          path="/branch-create"
+          element={
+            <React.Suspense fallback={<Fallback />}>
+              <PrivateRoute>
+                <PageBranch />
+              </PrivateRoute>
+            </React.Suspense>
+          }
+        />
+        {/* <Route
           path="/users-create"
           element={
             <React.Suspense fallback={<Fallback />}>
@@ -50,7 +61,7 @@ export function Router() {
               </PrivateRoute>
             </React.Suspense>
           }
-        />
+        /> */}
       </Route>
     </Routes>
   );

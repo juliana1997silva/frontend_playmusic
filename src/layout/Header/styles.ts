@@ -1,15 +1,19 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-image: linear-gradient(to right, #fff, #4169e1);
-  height: 45px;
-`;
-export const ContainerLogo = styled.div`
-  margin-left: 10px;
-`;
-export const ContainerPerfil = styled.div`
-  margin-right: 10px;
-`;
+export const ContainerHeader = styled.header``;
+export const Container = styled.div``;
+export const Link = styled.a``;
+export const Image = styled.img``;
+export const Text = styled.span``;
+export const Icon = styled.i``;
+export const Form = styled.form``;
+export const Input = styled.input``;
+export const Button = styled.button``;
+export const Nav = styled.nav``;
+export const ContainerList = styled.ul``;
+export const NavItem = styled.li``;
+export const Divider = styled.hr``;
+export const Title = styled.h4``;
+export const Description = styled.p``;
+export const NameProfile = styled.h6``;
+export const ContainerSideBar = styled.aside``;

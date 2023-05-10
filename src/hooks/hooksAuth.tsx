@@ -1,14 +1,28 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 //import { toast } from "react-toastify";
 //import "react-toastify/dist/ReactToastify.css";
 import { IProps } from "../types";
+import { useSearch } from "rsuite/esm/Picker";
 
-interface HooksAuthData {}
+interface HooksAuthData {
+  expanded: boolean;
+  setExpanded(expanded: boolean): void;
+}
 
 const AuthContext = createContext<HooksAuthData>({} as HooksAuthData);
 
 const AuthContextProvider: React.FC<IProps> = ({ children }) => {
-  return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <AuthContext.Provider
+      value={{
+        expanded,
+        setExpanded,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 function useAuth(): HooksAuthData {

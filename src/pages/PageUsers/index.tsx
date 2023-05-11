@@ -1,12 +1,12 @@
 import React from "react";
-import UsersCreate from "./UsersCreate";
 import AppProvider from "./hooks";
+import UsersList from "./UsersList";
 
 const PageUsers: React.FC = () => {
   return (
     <>
       <AppProvider>
-        <UsersCreate />
+        <UsersList />
       </AppProvider>
     </>
   );

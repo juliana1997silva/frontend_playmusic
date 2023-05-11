@@ -8,17 +8,17 @@ import { useAuth } from "../../hooks/hooksAuth";
 const Master: React.FC = () => {
   const { expanded } = useAuth();
   return (
-    <div className="show-container">
-      <Container>
-        <Header>
+    <div className="container-fluid">
+      <Container className="row">
+        <Header className="row col-12">
           <ComponentHeader />
         </Header>
-        <Container className="row col-12 justify-content-end">
+        <Container className="row col-12 mt-2 justify-content-end">
           <Frame />
           <Content
             className={`row ${
               expanded ? "col-12" : "col-9"
-            } justify-content-end`}
+            } justify-content-end `}
           >
             <Outlet />
           </Content>

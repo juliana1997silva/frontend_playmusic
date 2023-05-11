@@ -7,8 +7,9 @@ import Master from "../layout/Master";
 const PageLogin = React.lazy(() => import("../pages/PageLogin"));
 const PageDashboard = React.lazy(() => import("../pages/PageDashboard"));
 const PageBranch = React.lazy(() => import("../pages/PageBranch"));
-//const PageUsers = React.lazy(() => import("../pages/PageUsers"));
-//const UsersList = React.lazy(() => import("../pages/PageUsers/UsersList"));
+const PageCustomers = React.lazy(() => import("../pages/PageCustomers"));
+const PageOperator = React.lazy(() => import("../pages/PageOperator"));
+const PageUsers = React.lazy(() => import("../pages/PageUsers"));
 
 export function Router() {
   return (
@@ -42,12 +43,22 @@ export function Router() {
             </React.Suspense>
           }
         />
-        {/* <Route
-          path="/users-create"
+        <Route
+          path="/customers"
           element={
             <React.Suspense fallback={<Fallback />}>
               <PrivateRoute>
-                <PageUsers />
+                <PageCustomers />
+              </PrivateRoute>
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/operator"
+          element={
+            <React.Suspense fallback={<Fallback />}>
+              <PrivateRoute>
+                <PageOperator />
               </PrivateRoute>
             </React.Suspense>
           }
@@ -57,11 +68,11 @@ export function Router() {
           element={
             <React.Suspense fallback={<Fallback />}>
               <PrivateRoute>
-                <UsersList />
+                <PageUsers />
               </PrivateRoute>
             </React.Suspense>
           }
-        /> */}
+        />
       </Route>
     </Routes>
   );

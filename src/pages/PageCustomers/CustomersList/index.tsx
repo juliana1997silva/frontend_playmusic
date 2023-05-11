@@ -20,10 +20,10 @@ import {
   TitlePage,
 } from "./styles";
 import Button from "react-bootstrap/Button";
-import UsersCreate from "../UsersCreate";
+import CustomersCreate from "../CustomersCreate";
 
-const UsersList: React.FC = () => {
-  const [showNewUsers, setShowNewUsers] = useState(false);
+const CustomersList: React.FC = () => {
+  const [showNewCustomers, setShowNewCustomers] = useState(false);
   const ListUsers = [
     {
       name: "Juliana Silva",
@@ -51,12 +51,12 @@ const UsersList: React.FC = () => {
     },
   ];
 
-  const handleNewUsers = useCallback(() => {
-    setShowNewUsers(true);
-  }, [setShowNewUsers]);
+  const handleNewCustomers = useCallback(() => {
+    setShowNewCustomers(true);
+  }, [setShowNewCustomers]);
 
-  if (showNewUsers) {
-    return <UsersCreate />;
+  if (showNewCustomers) {
+    return <CustomersCreate />;
   }
 
   return (
@@ -83,9 +83,9 @@ const UsersList: React.FC = () => {
             <Button
               type="button"
               className="btn btn-success row col-2"
-              onClick={handleNewUsers}
+              onClick={handleNewCustomers}
             >
-              Novo Usuario
+              Novo Cliente
             </Button>
           </Container>
           <br />
@@ -177,4 +177,4 @@ const UsersList: React.FC = () => {
     </>
   );
 };
-export default UsersList;
+export default CustomersList;

@@ -4,26 +4,22 @@ import {
   Container,
   ContainerBreadcrumb,
   ContainerMain,
+  FormHTML,
+  FormControl,
+  FormLabel,
   Link,
   Nav,
   Section,
   TitlePage,
   Button,
-  FormHTML,
-  FormLabel,
-  FormControl,
 } from "./styles";
 import Select from "react-select";
 
-const UsersCreate: React.FC = () => {
+const OperatorCreate: React.FC = () => {
   const options = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
     { value: "vanilla", label: "Vanilla" },
-  ];
-  const optionsType = [
-    { value: "gestor", label: "Gestor" },
-    { value: "operador", label: "Operador" },
   ];
 
   return (
@@ -31,7 +27,7 @@ const UsersCreate: React.FC = () => {
       <ContainerMain id="main" className="main">
         <Container style={{ padding: 30 }} />
         <Container className="pagetitle">
-          <TitlePage>Lista de Usuarios</TitlePage>
+          <TitlePage>Cadastro de Operadores </TitlePage>
           <Nav>
             <ContainerBreadcrumb className="breadcrumb">
               <BreadcrumbItem className="breadcrumb-item">
@@ -39,7 +35,7 @@ const UsersCreate: React.FC = () => {
               </BreadcrumbItem>
 
               <BreadcrumbItem className="breadcrumb-item active">
-                Lista de Usuarios
+                Cadastro Clientes
               </BreadcrumbItem>
             </ContainerBreadcrumb>
           </Nav>
@@ -47,11 +43,11 @@ const UsersCreate: React.FC = () => {
         <Container style={{ padding: 10 }} />
         <Section className="section">
           <Container className="row">
-            <Container className="col-lg-12">
+            <Container className="col-lg-8">
               <Container className="card p-3">
                 <Container className="card-body">
                   <FormHTML className="row g-3">
-                    <Container className="col-6 ">
+                    <Container className="col-12 ">
                       <FormLabel className="form-label">Nome:</FormLabel>
                       <Container className="col-sm-12">
                         <FormControl
@@ -72,54 +68,19 @@ const UsersCreate: React.FC = () => {
                       </Container>
                     </Container>
                     <Container className="col-6 ">
-                      <FormLabel className="form-label">Filial:</FormLabel>
+                      <FormLabel className="form-label">Praça:</FormLabel>
                       <Container className="col-sm-12">
                         <Select
+                          isMulti
                           className="basic-multi-select"
+                          classNamePrefix="select"
                           options={options}
                           placeholder="Selecione"
                           onChange={(e) => console.log(e)}
-                          name="filial"
                         />
                       </Container>
                     </Container>
-                    <Container className="col-6 ">
-                      <FormLabel className="form-label">
-                        Tipo de Usuario:
-                      </FormLabel>
-                      <Container className="col-sm-12">
-                        <Select
-                          className="basic-multi-select"
-                          options={optionsType}
-                          placeholder="Selecione"
-                          onChange={(e) => console.log(e)}
-                          name="filial"
-                        />
-                      </Container>
-                    </Container>
-                    <Container className="col-12 ">
-                      <FormLabel className="form-label">Senha:</FormLabel>
-                      <Container className="col-sm-6">
-                        <FormControl
-                          type="password"
-                          className="form-control"
-                          name="password"
-                        />
-                      </Container>
-                    </Container>
-                    <Container className="col-12 ">
-                      <FormLabel className="form-label">
-                        Confirmar Senha:
-                      </FormLabel>
-                      <Container className="col-sm-6">
-                        <FormControl
-                          type="password"
-                          className="form-control"
-                          name="confirmation_password"
-                        />
-                      </Container>
-                    </Container>
-                    <Container style={{ padding: 10 }} />
+
                     <Container className="text-center">
                       <Button type="submit" className="btn btn-primary">
                         Salvar
@@ -143,4 +104,5 @@ const UsersCreate: React.FC = () => {
     </>
   );
 };
-export default UsersCreate;
+
+export default OperatorCreate;

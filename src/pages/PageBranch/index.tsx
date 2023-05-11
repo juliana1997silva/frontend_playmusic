@@ -1,5 +1,5 @@
 import React from "react";
-import BranchRegistry from "./BranchRegistry";
+import BranchRegistry from "./BranchCreate";
 
 const PageBranch: React.FC = () => {
   return (

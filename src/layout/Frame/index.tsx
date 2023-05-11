@@ -1,44 +1,61 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useAuth } from "../../hooks/hooksAuth";
 import {
-  ContainerList,
+  ContainerNavItem,
   Icon,
+  Item,
   Link,
   NavItem,
-  Text,
-  ContainerSideBar,
+  SideBarContainer,
 } from "./styles";
-import { useAuth } from "../../hooks/hooksAuth";
 
 const Frame: React.FC = () => {
   const { expanded } = useAuth();
-  const navegate = useNavigate();
   useEffect(() => {
     console.log("expanded::", expanded);
   });
   return (
     <>
-      <ContainerSideBar
+      <SideBarContainer
         id="sidebar"
         className={`sidebar ${expanded ? "collapse" : ""} navbar-collapse`}
-        //`sidebar ${expanded ? "collapse" : ""} navbar-collapse`
       >
-        <ContainerList className="sidebar-nav" id="sidebar-nav">
+        <ContainerNavItem className="sidebar-nav" id="sidebar-nav">
           <NavItem className="nav-item">
-            <Link className="nav-link" data-bs-toggle="collapse" href="">
-              <Icon className="bi bi-menu-button-wide" />
-              <Text>Dashboard</Text>
+            <Link className="nav-link collapsed" href="index.html">
+              <Icon className="bi bi-grid" />
+              <Item>Dashboard</Item>
             </Link>
           </NavItem>
 
+          {/*  <NavItem className="nav-heading">CADASTROS</NavItem> */}
+
           <NavItem className="nav-item">
-            <Link className="nav-link " href="#">
-              <Icon className="bi bi-file-earmark" />
-              <Text>Cadastro de Filial</Text>
+            <Link className="nav-link collapsed" href="/branch-create">
+              <Icon className="bi bi-person" />
+              <Item>Cadastro de Filial</Item>
             </Link>
           </NavItem>
-        </ContainerList>
-      </ContainerSideBar>
+          <NavItem className="nav-item">
+            <Link className="nav-link collapsed" href="/customers">
+              <Icon className="bi bi-person" />
+              <Item>Cadastro de Clientes</Item>
+            </Link>
+          </NavItem>
+          <NavItem className="nav-item">
+            <Link className="nav-link collapsed" href="/operator">
+              <Icon className="bi bi-person" />
+              <Item>Cadastro de Operadores</Item>
+            </Link>
+          </NavItem>
+          <NavItem className="nav-item">
+            <Link className="nav-link collapsed" href="/users">
+              <Icon className="bi bi-person" />
+              <Item>Usuarios</Item>
+            </Link>
+          </NavItem>
+        </ContainerNavItem>
+      </SideBarContainer>
     </>
   );
 };
